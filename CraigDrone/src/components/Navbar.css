@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #efefef00;
+
+}
+
+.container {
+  max-width: 1200px;
+
+  min-width: calc(min-content - 10px);
+  margin: 0 auto;
+  padding: 0 15px;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+
+  
+  
+  
+  
+  
+  border-radius: 25px;
+
+  left: 2px;
+
+}
+
+
+
+.navbar {
+  height: 60px;
+  background-color: #cecece;
+  position: sticky;
+  top: 10px;
+  z-index: 10;
+  
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 25px;
+  max-width: 1200px;
+  
+  
+  width: auto ;
+  min-width:min-content ;
+}
+
+.logo {
+  padding-top: 5px;
+  flex: 0%;
+  max-width: 600px;
+  min-width: none;
+}
+
+.fa-bars {
+  color: black;
+}
+
+.menu-icon {
+  display: none;
+}
+
+.nav-elements {}
+
+
+.nav-elements ul {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+}
+
+.nav-elements ul li:not(:last-child) {
+  margin-right: 60px;
+}
+
+.nav-elements ul a {
+  font-size: 17px;
+  font-weight: 400;
+  color: #000000;
+  text-decoration: none;
+}
+
+.nav-elements ul a.active {
+  color: #1c4fb4;
+  font-weight: 500;
+  position: relative;
+}
+
+.nav-elements ul a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #000000;
+}
+
+
+@media (max-width: 768px) {
+  .nav-elements ul li:not(:last-child) {
+    margin-right: 30px;
+  }
+}
+
+@media(max-width:400px){
+  .logo{
+    width: 10px;
+    min-width: none;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+    cursor: pointer;
+  }
+
+
+  .nav-elements {
+    position: absolute;
+    right: 0;
+    top: 60px;
+    background-color: #cecece;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(90px);
+    opacity: 100%;
+    width: 0px;
+    transition:all 0.3s ease-out;
+    overflow: hidden;
+    z-index: 2;
+    border-radius: 25px;
+    width: 220px;
+    height: 0;
+    z-index: -1;
+
+
+    
+    min-width: none;
+  }
+
+  .nav-elements.active {
+    height: 250px;
+  }
+
+  .nav-elements ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-elements ul li {
+    margin-right: unset;
+    margin-top: 22px;
+  }
+}

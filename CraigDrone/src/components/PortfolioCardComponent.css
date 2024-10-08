@@ -1,0 +1,73 @@
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#portfolioVideoPlayer {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border:0px;
+}
+
+.article-card {
+  width: calc(50vw - 20px);
+  min-width: none;
+  max-width: 800px;
+  height: 500px;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 300ms;
+}
+
+@media (max-width: 1600px) {
+  .article-card {
+    width: calc(100vw - 20px);
+  }
+}
+
+
+.article-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgb(68, 0, 255), 0 10px 10px rgb(82, 12, 245);
+}
+
+.article-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.article-card .content {
+  box-sizing: border-box;
+  width: 100%;
+  position: absolute;
+  padding: 30px 20px 20px 20px;
+  height: auto;
+  top: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+  z-index: 1;
+}
+
+.article-card .date,
+.article-card .title {
+  margin: 0;
+}
+
+.article-card .date {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 4px;
+}
+
+.article-card .title {
+  font-size: 17px;
+  color: #fff;
+}

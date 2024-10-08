@@ -1,0 +1,25 @@
+.glass{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 39px;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border:1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    height: 250px;
+   
+}
+
+.ServicesHeader{
+    height: fit-content;
+    background-image: url('../assets/PageHeaderImage.jpg');
+    height: 250px;
+    
+    background-repeat: no-repeat;
+
+  background-size: 100% 150%;
+    
+}

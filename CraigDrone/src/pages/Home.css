@@ -1,0 +1,132 @@
+.pageContainer{
+    flex-wrap: wrap;
+}
+
+.videoContainer {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding:0;
+    margin:0;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+    overflow:hidden;
+    background-color:rgba(0, 0, 0, 0.801);
+    max-height: 50vh;
+    min-height: 900px;
+    
+}
+
+#videoPlayer {
+    min-width:100%;
+    position:relative;
+    bottom:0;
+    left:0;
+    background-color: rgb(0, 0, 0);
+    opacity: .6;
+}
+
+.overlayText {
+    position: absolute;
+    box-sizing: border-box;
+    top: 30%;
+    z-index: 1;
+    width: 100%;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+@media (max-width: 600px) {
+    .overlayText{
+        top:10%;
+    }
+}
+  
+#topText {
+    color: white;
+    text-align: center;
+    font-size: 2.6em;
+    align-self: center;
+}
+
+#topSubText {
+    color: white;
+    text-align: center;
+    font-size: 17px;
+    align-self: center;
+}
+
+Button {
+    text-align: center;
+    font-size: 15px;
+    margin: auto;
+    z-index: 10;
+    display: block;
+    outline: 0;
+    text-align: center;
+    cursor: pointer;
+    padding: 17px 30px;
+    border: 0;
+    color: #fff;
+    font-size: 17.5px;
+    border: 2px solid transparent;
+    border-color: #fff;
+    background: transparent;
+    font-weight: 800;
+    line-height: 30px;
+    transition: background,color .1s ease-in-out;
+}
+
+Button:hover {
+    background-color: #00558d;
+    color: #fff;
+}
+
+.aboutSection{
+    color: rgb(255, 255, 255);
+    position: flex;
+    text-align: center;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+}
+
+.wavesSVG{
+    margin-top: -300px;
+    position: relative;
+    height: 100px;
+    width: 100%;
+    z-index: 1;
+}
+
+.flowchartContainer{
+    position: relative;
+    background-color:rgb(0, 0, 0);
+    vertical-align: top;
+    align-items: center;
+}
+
+.flowchartImage{
+    position: relative;
+    width: 95vw;
+    max-width: 1920px;
+    display: block;
+    margin: auto;
+}
+
+.OneStopContainer{
+    text-align: center;
+    position: flex;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+}
+
+footer{
+    text-align: center;
+}
+
+.react-multiple-carousel__arrow{
+    z-index: 1;
+}
