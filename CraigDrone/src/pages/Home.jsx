@@ -1,4 +1,4 @@
-import video from '../assets/videos/Hole_18.webm';
+
 import colorWaves from '../assets/colorWaves.svg';
 import FlowChart from '../assets/FlowChart.svg';
 
@@ -54,9 +54,7 @@ const Home = () => {
     return (
         <>
             <div className="videoContainer">
-                    <video id='videoPlayer' autoPlay loop muted >
-                        <source src={video} type="video/webm" />
-                    </video>
+                    
 
                 <div className="overlayText">
                     <p id="topText">Premium Full Spectrum Aerial Photography and Videography Solutions </p>
