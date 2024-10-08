@@ -22,7 +22,7 @@ const Footer = () => {
                 </div>
 
                 <div className="row">
-                    CloudLine Imagery || Website Designed By: Web Frontier Solutions
+                    CloudLine Imagery LLC || Website Designed By: Web Frontier Solutions
                 </div>
             </div>
         </footer>
