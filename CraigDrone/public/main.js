@@ -94,7 +94,7 @@ const getPortfolioEntries = () => {
                 portfolioEntriesList.push(post)
                 ilist.push(i)
                 if (ilist.length === files.length) {
-                    const sortedList = postlist.sort ((a, b) => {
+                    const sortedList = portfolioEntriesList.sort ((a, b) => {
                         return a.id < b.id ? 1 : -1
                     })
                     let data = JSON.stringify(sortedList)
