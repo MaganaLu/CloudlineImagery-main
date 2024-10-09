@@ -7,9 +7,9 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url); // get the resolved path to the file
 const __dirname = path.dirname(__filename); // get the name of the directory
 
-const dirPath = join(__dirname, "../posts")
+const dirPath = join(__dirname, "../portfolioEntries")
 const dirPathPages = join(__dirname, "../src/pages/content")
-let postlist = []
+let portfolioEntriesList = []
 let pagelist = []
 
 const months = {
@@ -42,7 +42,7 @@ const formatDate = (date) => {
 
 
 
-const getPosts = () => {
+const getPortfolioEntries = () => {
     readdir(dirPath, (err, files) => {
         if (err) {
             return console.log("Failed to list contents of directory: " + err)
@@ -91,14 +91,14 @@ const getPosts = () => {
                     thumbnail: metadata.thumbnail,
                     content: content ? content : "No content given",
                 }
-                postlist.push(post)
+                portfolioEntriesList.push(post)
                 ilist.push(i)
                 if (ilist.length === files.length) {
                     const sortedList = postlist.sort ((a, b) => {
                         return a.id < b.id ? 1 : -1
                     })
                     let data = JSON.stringify(sortedList)
-                    writeFileSync("src/posts.json", data)
+                    writeFileSync("src/portfolioEntries.json", data)
                 }
             })
         })
@@ -126,5 +126,5 @@ const getPages = () => {
     return 
 }
 
-getPosts()
+getPortfolioEntries()
 getPages()
