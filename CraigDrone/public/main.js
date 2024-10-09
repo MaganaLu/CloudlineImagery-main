@@ -100,7 +100,7 @@ const getPortfolioEntries = () => {
                     let data = JSON.stringify(sortedList)
                     writeFileSync("./dist/portfolioEntries.json", data)
                     
-                    console.log(data);
+                    console.log("data: ",data);
                 }
             })
         })
