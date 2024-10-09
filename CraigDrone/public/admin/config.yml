@@ -19,22 +19,22 @@ collections:
       - { label: "Type", name: "type", widget: "select", options: ["Real Estate", "Construction", "Golf Courses", "Other", "Events"] }
       - { label: "VideoURL", name: "videoURL", widget: "string" }
 
-  - name: "services" # Used in routes, e.g., /admin/collections/blog
-    label: "Services" # Used in the UI
-    folder: "CraigDrone/services" # The path to the folder where the documents are stored
-    create: true # Allow users to create new documents in this collection
-    slug: "{{slug}}" # Filename template, e.g., title.md
-    fields: # The fields for each document, usually in front matter
+  - name: "services"  
+    label: "Services" 
+    folder: "CraigDrone/services" 
+    create: true 
+    slug: "{{slug}}" 
+    fields: 
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Subtext", name: "subtext", widget: "string" }
       - { label: "PictureURL", name: "pictureURL", widget: "string" }
 
-  - name: "Home" # Used in routes, e.g., /admin/collections/blog
-    label: "home" # Used in the UI
-    folder: "CraigDrone/home" # The path to the folder where the documents are stored
-    create: true # Allow users to create new documents in this collection
-    slug: "{{slug}}" # Filename template, e.g., title.md
-    fields: # The fields for each document, usually in front matter
+  - name: "Home" 
+    label: "home" 
+    folder: "CraigDrone/home" 
+    create: true 
+    slug: "{{slug}}" 
+    fields: 
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Subtext", name: "subtext", widget: "string" }
       - { label: "MediaURL", name: "mediaURL", widget: "string" }
