@@ -11,6 +11,8 @@ import { collection, DocumentSnapshot, getDocs } from "firebase/firestore";
 import db from '../Firebase/Configuration.jsx';
 import React, { useState, useEffect } from "react";
 
+import PostList from '../components/postlist.jsx';
+
 
 import './Home.css';
 
@@ -53,6 +55,8 @@ const Home = () => {
 
     return (
         <>
+
+        <PostList/>
             <div className="videoContainer">
                     
 
