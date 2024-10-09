@@ -1,6 +1,7 @@
 
 import colorWaves from '../assets/colorWaves.svg';
 import FlowChart from '../assets/FlowChart.svg';
+import video from '../assets/videos/Hole_18.webm';
 
 import HomeCarousel from '../components/HomeCarousel';
 import ContactFormWeb3 from '../components/ContactWeb3Form.jsx';
@@ -36,17 +37,17 @@ const Home = () => {
                             setTodos(todos => [...todos, doc.data()])
                         }
                     })
-                    
+
                 })
                 .catch(err => {
-                    
+
                 })
         }
 
         getTodos();
 
         return () => {
-            
+
             ignore = true;
         };
 
@@ -56,9 +57,11 @@ const Home = () => {
     return (
         <>
 
-        <PostList/>
+            <PostList />
             <div className="videoContainer">
-                    
+                <video id='videoPlayer' autoPlay loop muted >
+                    <source src={video} type="video/webm" />
+                </video>
 
                 <div className="overlayText">
                     <p id="topText">Premium Full Spectrum Aerial Photography and Videography Solutions </p>
