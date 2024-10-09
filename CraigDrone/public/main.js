@@ -37,7 +37,7 @@ const formatDate = (date) => {
     const year = dateArray[0]
     const time = `${timeArray[0]}:${timeArray[1]}`
 
-    return {"month": month, "monthName": monthName, "day": day, "year": year, "time": time}
+    return { "month": month, "monthName": monthName, "day": day, "year": year, "time": time }
 }
 
 
@@ -58,7 +58,7 @@ const getPortfolioEntries = () => {
                     }
                     return acc
                 }
-                const parseMetadata = ({lines, metadataIndices}) => {
+                const parseMetadata = ({ lines, metadataIndices }) => {
                     if (metadataIndices.length > 0) {
                         let metadata = lines.slice(metadataIndices[0] + 1, metadataIndices[1])
                         metadata.forEach(line => {
@@ -67,7 +67,7 @@ const getPortfolioEntries = () => {
                         return obj
                     }
                 }
-                const parseContent = ({lines, metadataIndices}) => {
+                const parseContent = ({ lines, metadataIndices }) => {
                     if (metadataIndices.length > 0) {
                         lines = lines.slice(metadataIndices[1] + 1, lines.length)
                     }
@@ -75,7 +75,7 @@ const getPortfolioEntries = () => {
                 }
                 const lines = contents.split("\n")
                 const metadataIndices = lines.reduce(getMetadataIndices, [])
-                const metadata = parseMetadata({lines, metadataIndices})
+                const metadata = parseMetadata({ lines, metadataIndices })
                 //const videoURL = parseContent({lines, metadataIndices})
                 const parsedDate = metadata.date ? formatDate(metadata.date) : new Date()
                 const publishedDate = `${parsedDate["monthName"]} ${parsedDate["day"]}, ${parsedDate["year"]}`
@@ -94,17 +94,18 @@ const getPortfolioEntries = () => {
                 portfolioEntriesList.push(post)
                 ilist.push(i)
                 if (ilist.length === files.length) {
-                    const sortedList = portfolioEntriesList.sort ((a, b) => {
+                    const sortedList = portfolioEntriesList.sort((a, b) => {
                         return a.id < b.id ? 1 : -1
                     })
                     let data = JSON.stringify(sortedList)
-                    writeFileSync("./portfolioEntries.json", data)
+                    writeFileSync("src/portfolioEntries.json", data)
+
                     console.log(data);
                 }
             })
         })
     })
-    return 
+    return
 }
 
 const getPages = () => {
@@ -114,7 +115,7 @@ const getPages = () => {
         }
         files.forEach((file, i) => {
             let page
-            readFile(`${dirPathPages}/${file}`, "utf8", (err, contents) => { 
+            readFile(`${dirPathPages}/${file}`, "utf8", (err, contents) => {
                 page = {
                     content: contents
                 }
@@ -124,7 +125,7 @@ const getPages = () => {
             })
         })
     })
-    return 
+    return
 }
 
 getPortfolioEntries()
