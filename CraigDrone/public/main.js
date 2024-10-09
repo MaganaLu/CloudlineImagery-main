@@ -99,6 +99,7 @@ const getPortfolioEntries = () => {
                     })
                     let data = JSON.stringify(sortedList)
                     writeFileSync("src/portfolioEntries.json", data)
+                    console.log(data);
                 }
             })
         })

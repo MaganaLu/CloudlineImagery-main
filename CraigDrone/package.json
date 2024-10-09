@@ -5,10 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "node public/main.js && vite",
-    "build": "node public/main.js && vite build",
+    "build": "node dist/main.js && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "server": "node public/main.js && vite build"
+    "server": "node dist/main.js"
   },
   "dependencies": {
     "firebase": "^10.13.2",
