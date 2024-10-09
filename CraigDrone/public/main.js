@@ -127,4 +127,3 @@ const getPages = () => {
 }
 
 getPortfolioEntries()
-getPages()
