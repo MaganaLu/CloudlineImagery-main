@@ -8,8 +8,8 @@ public_folder: "/images"
 
 collections:
   - name: "portfolioEntries" # Used in routes, e.g., /admin/collections/blog
-    label: "Blog Posts" # Used in the UI
-    folder: "CraigDrone/posts" # The path to the folder where the documents are stored
+    label: "Portfolio Entries" # Used in the UI
+    folder: "CraigDrone/portfolioEntries" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template, e.g., title.md
     fields: # The fields for each document, usually in front matter
