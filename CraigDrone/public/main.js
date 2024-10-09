@@ -98,9 +98,9 @@ const getPortfolioEntries = () => {
                         return a.id < b.id ? 1 : -1
                     })
                     let data = JSON.stringify(sortedList)
-                    writeFileSync("./dist/portfolioEntries.json", data)
+                    writeFileSync("src/portfolioEntries.json", data)
                     
-                    console.log("data: ",data);
+                    console.log(data);
                 }
             })
         })
