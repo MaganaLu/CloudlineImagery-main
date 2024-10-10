@@ -6,6 +6,8 @@ import { collection, DocumentSnapshot, getDocs, query, where } from "firebase/fi
 import db from '../Firebase/Configuration.jsx';
 import React, { useState, useEffect } from "react";
 
+import portfolioEntries from "../portfolioEntries.json";
+
 const Portfolio = () => {
   const [golfCourseEntries, setGolfCourseEntries] = useState([]);
   const [realEstateEntries, setRealEstateEntries] = useState([]);
@@ -16,68 +18,7 @@ const Portfolio = () => {
   const [otherEntries, setOtherEntries] = useState([]);
 
   useEffect(() => {
-    let ignore = false;
 
-    const getGolfCourseEntries = async () => {
-      setGolfCourseEntries([]);
-      setRealEstateEntries([]);
-
-      setConstructionEntries([]);
-      setEventEntries([]);
-      setOtherEntries([]);
-
-      const collection_ref = collection(db, "portfolio_entries");
-      const golfCoursesQuery = query(collection_ref, where("type", "==", "Golf Courses"));
-      const realEstateQuery = query(collection_ref, where("type", "==", "Real Estate"));
-
-      const constructionQuery = query(collection_ref, where("type", "==", "Construction"));
-      const eventQuery = query(collection_ref, where("type", "==", "Events"));
-      const otherQuery = query(collection_ref, where("type", "==", "Other"));
-
-      const golfCoursesQuerySnapshot = await getDocs(golfCoursesQuery);
-      const realEstateQuerySnapshot = await getDocs(realEstateQuery);
-
-      const constructionQuerySnapshot = await getDocs(constructionQuery);
-      const eventQuerySnapshot = await getDocs(eventQuery);
-      const otherQuerySnapshot = await getDocs(otherQuery);
-
-      golfCoursesQuerySnapshot.forEach((doc) => {
-        if (!ignore) {
-          setGolfCourseEntries(golfCourseEntries => [...golfCourseEntries, doc.data()]);
-        }
-      });
-
-
-      realEstateQuerySnapshot.forEach((doc) => {
-        if (!ignore) {
-          setRealEstateEntries(realEstateEntries => [...realEstateEntries, doc.data()]);
-        }
-      });
-      
-      
-      constructionQuerySnapshot.forEach((doc) => {
-        if (!ignore) {
-          setConstructionEntries(constructionEntries => [...constructionEntries, doc.data()]);
-        }
-      });
-      
-      eventQuerySnapshot.forEach((doc) => {
-        if (!ignore) {
-          setEventEntries(eventEntries => [...eventEntries, doc.data()]);
-        }
-      });
-      
-      otherQuerySnapshot.forEach((doc) => {
-        if (!ignore) {
-          setOtherEntries(otherEntries => [...otherEntries, doc.data()]);
-        }
-      });
-
-
-
-    }
-
-    getGolfCourseEntries();
 
     const urlHash = window.location.hash;
     
@@ -96,7 +37,7 @@ const Portfolio = () => {
     }
 
     return () => {
-      ignore = true;
+      
     };
   }, [])
 
@@ -108,13 +49,14 @@ const Portfolio = () => {
 
       <hr id='#Golf-Courses' className="hr-text" data-content="Golf Courses"/>
       <div className="portfolioCardContainer">
-        {golfCourseEntries.map(portfolioEntry =>
+        {portfolioEntries.map(portfolioEntry =>
           <ul key={portfolioEntry.title} className="ulPortfolio">
-            <PortfolioCardComponent description={portfolioEntry.description} video={portfolioEntry.video_url} title={portfolioEntry.title} date={portfolioEntry.date} image={portfolioEntry.image} type={portfolioEntry.type} />
+            <PortfolioCardComponent description={portfolioEntry.description} video={portfolioEntry.videoURL} title={portfolioEntry.title} date={portfolioEntry.date} image={portfolioEntry.image} type={portfolioEntry.type} />
           </ul>
         )}
       </div>
 
+{/*
       <hr id='#Real-Estate' className="hr-text" data-content="Real Estate"/>
       <div className="portfolioCardContainer">
         {realEstateEntries.map(portfolioEntry =>
@@ -150,7 +92,7 @@ const Portfolio = () => {
           </ul>
         )}
       </div>
-
+*/}
 
 
     </>

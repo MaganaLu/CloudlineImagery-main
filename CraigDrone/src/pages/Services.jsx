@@ -9,6 +9,9 @@ import ServicesCardComponent from '../components/ServicesCardComponent';
 
 import { useNavigate } from "react-router-dom";
 
+//import PostList from '../components/postlist.jsx';
+
+
 const Services = () => {
   const navigate = useNavigate();
   const handleGoToContact = () => navigate("/Contact");
@@ -66,7 +69,7 @@ const Services = () => {
       </div>
 
       <div className='ServicesCardContainer'>
-
+      
         {services.map(service =>
           <ul style={{paddingInlineStart:'0px'}} onClick={() => navigateToPortfolioSection(service.title)} key={service.title}>
             <ServicesCardComponent title={service.title} subtext={service.subtext} image={service.image} />

@@ -2,7 +2,7 @@ import './PortfolioCardComponent.css'
 
 const PortfolioCardComponent = (props) => {
 
-    let dateString = (props.date.toDate().toDateString()).toString();
+    //let dateString = (props.date.toDate().toDateString()).toString();
 
     const isIframe = () => {
         if ((props.video).includes("iframe")) {
@@ -20,7 +20,7 @@ const PortfolioCardComponent = (props) => {
                     <p class="title">{props.title}</p>
                     <p class="title">{props.description}</p>
 
-                    <p class="date">{dateString}</p>
+                    <p class="date">{props.date}</p>
                 </div>
                 {isIframe()}
             </div>

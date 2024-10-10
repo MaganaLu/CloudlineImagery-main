@@ -23,41 +23,10 @@ const Home = () => {
     const navigate = useNavigate();
     const handleGoToContact = () => navigate("/Contact");
 
-    const [todos, setTodos] = useState([]);
-
-    useEffect(() => {
-        let ignore = false;
-
-        const getTodos = async () => {
-            setTodos([]);
-            await getDocs(collection(db, "home_page"))
-                .then(querySnapshot => {
-                    querySnapshot.forEach(doc => {
-                        if (!ignore) {
-                            setTodos(todos => [...todos, doc.data()])
-                        }
-                    })
-
-                })
-                .catch(err => {
-
-                })
-        }
-
-        getTodos();
-
-        return () => {
-
-            ignore = true;
-        };
-
-
-    }, [])
-
     return (
         <>
 
-            <PostList />
+           
             <div className="videoContainer">
                 <video id='videoPlayer' autoPlay loop muted >
                     <source src={video} type="video/webm" />
