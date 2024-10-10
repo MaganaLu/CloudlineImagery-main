@@ -43,8 +43,9 @@ const Portfolio = () => {
   }
 
   function parseLists() {
+    console.log("in parse list");
     for (var i = 0, max = portfolioEntries.length; i < max; i++) {
-
+      console.log("pe: ",portfolioEntries[i]);
       if (sorted[portfolioEntries[i].type] == undefined) {
         sorted[portfolioEntries[i].type] = [];
       }
