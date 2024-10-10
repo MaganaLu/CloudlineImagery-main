@@ -8,7 +8,7 @@ const __filename = fileURLToPath(import.meta.url); // get the resolved path to t
 const __dirname = path.dirname(__filename); // get the name of the directory
 
 const dirPath = join(__dirname, "../portfolioEntries");
-const dirPathServices = join(__dirname, "../servicesEntries");
+const dirPathServices = join(__dirname, "../services");
 const dirPathPages = join(__dirname, "../src/pages/content");
 let portfolioEntriesList = [];
 let servicesEntriesList =[];
@@ -102,7 +102,7 @@ const getPortfolioEntries = () => {
                     let data = JSON.stringify(sortedList)
                     writeFileSync("src/portfolioEntries.json", data)
                     
-                    console.log(data);
+                    console.log("portfolios: ",data);
                 }
             })
         })
@@ -135,29 +135,19 @@ const getServicesEntries = () => {
                         return obj
                     }
                 }
-                const parseContent = ({ lines, metadataIndices }) => {
-                    if (metadataIndices.length > 0) {
-                        lines = lines.slice(metadataIndices[1] + 1, lines.length)
-                    }
-                    return lines.join("\n")
-                }
                 const lines = contents.split("\n")
                 const metadataIndices = lines.reduce(getMetadataIndices, [])
                 const metadata = parseMetadata({ lines, metadataIndices })
-                //const videoURL = parseContent({lines, metadataIndices})
                 const parsedDate = metadata.date ? formatDate(metadata.date) : new Date()
-                const publishedDate = `${parsedDate["monthName"]} ${parsedDate["day"]}, ${parsedDate["year"]}`
                 const datestring = `${parsedDate["year"]}-${parsedDate["month"]}-${parsedDate["day"]}T${parsedDate["time"]}:00`
                 const date = new Date(datestring)
-                const timestamp = date.getTime() / 1000
+                const timestamp = date.getTime() / 1000;
+
                 post = {
                     id: timestamp,
                     title: metadata.title ? metadata.title : "No title given",
-                    description: metadata.description ? metadata.description : "No description given",
-                    date: publishedDate ? publishedDate : "No date given",
-                    time: parsedDate["time"],
-                    type: metadata.type,
-                    videoURL: metadata.videoURL ? metadata.videoURL : "No content given",
+                    subtext: metadata.description ? metadata.description : "No description given",
+                    pictureURL: metadata.pictureURL ? metadata.videoURL : "No content given",
                 }
                 servicesEntriesList.push(post)
                 ilist.push(i)
@@ -168,7 +158,7 @@ const getServicesEntries = () => {
                     let data = JSON.stringify(sortedList)
                     writeFileSync("src/servicesEntries.json", data)
                     
-                    console.log(data);
+                    console.log("services: ",data);
                 }
             })
         })
