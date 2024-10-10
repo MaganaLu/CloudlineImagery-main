@@ -10,17 +10,12 @@ import portfolioEntries from "../portfolioEntries.json";
 
 var sorted = {};
 
-for (var i = 0, max = portfolioEntries.length; i < max; i++) {
 
-  if (sorted[portfolioEntries[i].type] == undefined) {
-    sorted[portfolioEntries[i].type] = [];
-  }
-  sorted[portfolioEntries[i].type].push(portfolioEntries[i]);
-}
 
 const Portfolio = () => {
-  
+
   useEffect(() => {
+
     const urlHash = window.location.hash;
     if (urlHash.length) {
       const element = document.getElementById(urlHash);
@@ -47,8 +42,20 @@ const Portfolio = () => {
     }
   }
 
+  function parseLists() {
+    for (var i = 0, max = portfolioEntries.length; i < max; i++) {
+
+      if (sorted[portfolioEntries[i].type] == undefined) {
+        sorted[portfolioEntries[i].type] = [];
+      }
+      sorted[portfolioEntries[i].type].push(portfolioEntries[i]);
+    }
+  }
+
+  parseLists();
 
   return (
+    
     <>
 
       <PageHeader image='../assets/NatureImage.jpg' hText="Portfolio" />
