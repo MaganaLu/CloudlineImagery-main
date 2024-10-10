@@ -28,7 +28,7 @@ const Home = () => {
 
            
             <div className="videoContainer">
-                <video id='videoPlayer' autoPlay loop muted >
+                <video id='videoPlayer' loop={true} muted={true} autoplay={true} playsinline={true} >
                     <source src={video} type="video/webm" />
                 </video>
 
