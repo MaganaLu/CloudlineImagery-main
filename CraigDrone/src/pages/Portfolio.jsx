@@ -8,19 +8,18 @@ import React, { useState, useEffect } from "react";
 
 import portfolioEntries from "../portfolioEntries.json";
 
+var sorted = {};
+
+for (var i = 0, max = portfolioEntries.length; i < max; i++) {
+
+  if (sorted[portfolioEntries[i].type] == undefined) {
+    sorted[portfolioEntries[i].type] = [];
+  }
+  sorted[portfolioEntries[i].type].push(portfolioEntries[i]);
+}
 
 const Portfolio = () => {
-  var sorted = {};
-
-
-  for (var i = 0, max = portfolioEntries.length; i < max; i++) {
-
-    if (sorted[portfolioEntries[i].type] == undefined) {
-      sorted[portfolioEntries[i].type] = [];
-    }
-    sorted[portfolioEntries[i].type].push(portfolioEntries[i]);
-  }
-
+  
   useEffect(() => {
     const urlHash = window.location.hash;
     if (urlHash.length) {
@@ -67,7 +66,7 @@ const Portfolio = () => {
 
       <hr id='#Construction' className="hr-text" data-content="Construction" />
       <div className="portfolioCardContainer">
-        {checkUndefinedSection("Construction")}
+        {checkUndefinedSection("Construction\r")}
       </div>
 
       <hr id='#Event-Coverage' className="hr-text" data-content="Event Coverage" />
