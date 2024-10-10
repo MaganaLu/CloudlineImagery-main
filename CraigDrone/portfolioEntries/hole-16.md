@@ -1,5 +1,5 @@
 ---
-title: "Hole 16 "
+title: Hole 16
 description: description
 date: 2024-10-10T08:14:00.000Z
 type: Golf Courses
