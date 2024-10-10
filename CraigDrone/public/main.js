@@ -8,6 +8,7 @@ const __filename = fileURLToPath(import.meta.url); // get the resolved path to t
 const __dirname = path.dirname(__filename); // get the name of the directory
 
 const dirPath = join(__dirname, "../portfolioEntries");
+const dirPathServices = join(__dirname, "../servicesEntries");
 const dirPathPages = join(__dirname, "../src/pages/content");
 let portfolioEntriesList = [];
 let servicesEntriesList =[];
@@ -110,7 +111,7 @@ const getPortfolioEntries = () => {
 }
 
 const getServicesEntries = () => {
-    readdir(dirPath, (err, files) => {
+    readdir(dirPathServices, (err, files) => {
         if (err) {
             return console.log("Failed to list contents of directory: " + err)
         }
@@ -118,7 +119,7 @@ const getServicesEntries = () => {
         files.forEach((file, i) => {
             let obj = {}
             let post
-            readFile(`${dirPath}/${file}`, "utf8", (err, contents) => {
+            readFile(`${dirPathServices}/${file}`, "utf8", (err, contents) => {
                 const getMetadataIndices = (acc, elem, i) => {
                     if (/^---/.test(elem)) {
                         acc.push(i)
