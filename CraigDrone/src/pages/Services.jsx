@@ -9,52 +9,17 @@ import ServicesCardComponent from '../components/ServicesCardComponent';
 
 import { useNavigate } from "react-router-dom";
 
-//import PostList from '../components/postlist.jsx';
+import servicesEntries from '../servicesEntries.json';
 
 
 const Services = () => {
   const navigate = useNavigate();
   const handleGoToContact = () => navigate("/Contact");
 
-  //const handleGoToPortfolioSection = () => navigate("/Portfolio");
-
   const navigateToPortfolioSection = (title) => {
     title= (title).replaceAll(" ", "-")
     navigate("/Portfolio/#" + title);
   }
-
-
-
-  const [services, setServices] = useState([]);
-
-  useEffect(() => {
-    let ignore = false;
-
-    const getServices = async () => {
-      setServices([]);
-      await getDocs(collection(db, "services"))
-        .then(querySnapshot => {
-          querySnapshot.forEach(doc => {
-            if (!ignore) {
-              setServices(services => [...services, doc.data()])
-            }
-          })
-          
-        })
-        .catch(err => {
-         
-        })
-    }
-
-    getServices();
-
-    return () => {
-      
-      ignore = true;
-    };
-
-
-  }, [])
 
 
   return (
@@ -70,9 +35,9 @@ const Services = () => {
 
       <div className='ServicesCardContainer'>
       
-        {services.map(service =>
+        {servicesEntries.map(service =>
           <ul style={{paddingInlineStart:'0px'}} onClick={() => navigateToPortfolioSection(service.title)} key={service.title}>
-            <ServicesCardComponent title={service.title} subtext={service.subtext} image={service.image} />
+            <ServicesCardComponent title={service.title} subtext={service.subtext} image={service.pictureURL} />
 
           </ul>
         )}

@@ -146,8 +146,8 @@ const getServicesEntries = () => {
                 post = {
                     id: timestamp,
                     title: metadata.title ? metadata.title : "No title given",
-                    subtext: metadata.description ? metadata.description : "No description given",
-                    pictureURL: metadata.pictureURL ? metadata.videoURL : "No content given",
+                    subtext: metadata.subtext ? metadata.subtext : "No subtext given",
+                    pictureURL: metadata.pictureURL ? metadata.pictureURL : "No picture given",
                 }
                 servicesEntriesList.push(post)
                 ilist.push(i)
