@@ -26,12 +26,31 @@ const Home = () => {
     return (
         <>
 
-           
+
+            <div className="videoContainer">
+                <div
+                    dangerouslySetInnerHTML={{
+                        __html: `
+                    <video
+                    id='videoPlayer'
+                    loop
+                    muted
+                    autoplay
+                    playsinline
+                    preload="metadata"
+                    >
+                    <source src="${video}" type="video/webm" />
+                    </video>`
+                    }}
+                />
+
+
+                {/*}
             <div className="videoContainer">
                 <video id='videoPlayer' loop={true} muted={true} autoplay={true} playsinline={true} >
                     <source src={video} type="video/webm" />
                 </video>
-
+            */}
                 <div className="overlayText">
                     <p id="topText">Premium Full Spectrum Aerial Photography and Videography Solutions </p>
                     <p id="topSubText">For your personal or business needs in WA.</p>
