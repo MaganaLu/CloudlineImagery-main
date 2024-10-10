@@ -13,7 +13,8 @@ const dirPathHome = join(__dirname, "../home");
 
 let portfolioEntriesList = [];
 let servicesEntriesList =[];
-let pagelist = [];
+let homeEntriesList = [];
+
 
 const months = {
     "01": "January",
@@ -206,10 +207,10 @@ const getHomeEntries = () => {
                     subtext: metadata.subtext ? metadata.subtext : "No subtext given",
                     mediaURL: metadata.mediaURL ? metadata.mediaURL : "No media given",
                 }
-                servicesEntriesList.push(post)
+                homeEntriesList.push(post)
                 ilist.push(i)
                 if (ilist.length === files.length) {
-                    const sortedList = servicesEntriesList.sort((a, b) => {
+                    const sortedList = homeEntriesList.sort((a, b) => {
                         return a.id < b.id ? 1 : -1
                     })
                     let data = JSON.stringify(sortedList)

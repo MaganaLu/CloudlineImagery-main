@@ -7,6 +7,8 @@ import { collection, DocumentSnapshot, getDocs } from "firebase/firestore";
 import db from '../Firebase/Configuration.jsx';
 import React, { useState, useEffect } from "react";
 
+import homeEntries from '../homeEntries.json';
+
 const responsive = {
   desktop: {
     breakpoint: {max: 10024, min: 1024 },
@@ -24,73 +26,9 @@ const responsive = {
     slidesToSlide: 1 // optional, default to 1.
   }
 };
-const sliderImageUrl = [
-  //First image url
-  {
-    url:"https://placehold.co/500x400",
-    bigText:"caption 1",
-    smallText:"words"
-      
-  },
-  {
-    url:"https://placehold.co/500x400",
-    bigText:"caption 2",
-    smallText:"words"
-  },
-  //Second image url
-  {
-    url:"https://placehold.co/500x400",
-    bigText:"caption 3",
-    smallText:"words"
-  },
-  //Third image url
-  {
-    url:"https://placehold.co/500x400",
-    bigText:"caption 4",
-    smallText:"words"
-  },
-
-  //Fourth image url
-  {
-    url:"https://placehold.co/500x400",
-    bigText:"caption 5",
-    smallText:"words"
-  }
-];
-
-
 
 
 const HomeCarousel = () => {
-
-  const [images, setImages] = useState([]);
-
-  useEffect(() => {
-      let ignore = false;
-
-      const getImages = async () => {
-        setImages([]);
-          await getDocs(collection(db, "home_page"))
-              .then(querySnapshot => {
-                  querySnapshot.forEach(doc => {
-                      if (!ignore) {
-                        setImages(images => [...images, doc.data()])
-                      }
-                  })
-              })
-              .catch(err => {
-                  
-              })
-      }
-
-      getImages();
-
-      return () => {
-          ignore = true;
-      };
-
-
-  }, [])
 
   return (
     <div className="parentContainer">
@@ -104,12 +42,12 @@ const HomeCarousel = () => {
         partialVisible={false}
         dotListClass="custom-dot-list-style"
       >
-        {images.map((imageEntry) => {
+        {homeEntries.map((imageEntry) => {
           return (
-            <div className="slider" key={imageEntry}>
-              <img src={imageEntry.image} alt="image" />
+            <div className="slider" key={imageEntry.id}>
+              <img src={imageEntry.mediaURL} alt="image" />
               <h1 className="cHText">{imageEntry.title}</h1>
-              <p className="cPText">{imageEntry.sub_text}</p>
+              <p className="cPText">{imageEntry.subtext}</p>
             </div>
           );
         })}
