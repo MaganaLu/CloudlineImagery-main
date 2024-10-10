@@ -38,17 +38,15 @@ const Portfolio = () => {
     };
   }, [])
 
-function checkUndefinedSection(arrayString) {
-  if (sorted[arrayString] != undefined) {
-    
-    return (sorted[arrayString].map(portfolioEntry =>
-      <ul key={portfolioEntry.title} className="ulPortfolio">
-        <PortfolioCardComponent description={portfolioEntry.description} video={portfolioEntry.videoURL} title={portfolioEntry.title} date={portfolioEntry.date} image={portfolioEntry.image} type={portfolioEntry.type} />
-      </ul>)
-    )
+  function checkUndefinedSection(arrayString) {
+    if (sorted[arrayString] != undefined) {
+      return (sorted[arrayString].map(portfolioEntry =>
+        <ul key={portfolioEntry.title} className="ulPortfolio">
+          <PortfolioCardComponent description={portfolioEntry.description} video={portfolioEntry.videoURL} title={portfolioEntry.title} date={portfolioEntry.date} image={portfolioEntry.image} type={portfolioEntry.type} />
+        </ul>)
+      )
+    }
   }
-
-}
 
 
   return (
