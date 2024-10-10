@@ -63,28 +63,28 @@ const Portfolio = () => {
 
       <hr id='#Golf-Courses' className="hr-text" data-content="Golf Courses" />
       <div className="portfolioCardContainer">
-        {checkUndefinedSection("Golf Courses\r")}
+        {checkUndefinedSection("Golf Courses")}
       </div>
 
 
       <hr id='#Real-Estate' className="hr-text" data-content="Real Estate" />
       <div className="portfolioCardContainer">
-        {checkUndefinedSection("Real Estate\r")}
+        {checkUndefinedSection("Real Estate")}
       </div>
 
       <hr id='#Construction' className="hr-text" data-content="Construction" />
       <div className="portfolioCardContainer">
-        {checkUndefinedSection("Construction\r")}
+        {checkUndefinedSection("Construction")}
       </div>
 
       <hr id='#Event-Coverage' className="hr-text" data-content="Event Coverage" />
       <div className="portfolioCardContainer">
-        {checkUndefinedSection("Events\r")}
+        {checkUndefinedSection("Events")}
       </div>
 
       <hr id='#Other-Services' className="hr-text" data-content="Other Services" />
       <div className="portfolioCardContainer">
-        {checkUndefinedSection("Other\r")}
+        {checkUndefinedSection("Other")}
       </div>
 
     </>
