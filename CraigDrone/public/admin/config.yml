@@ -17,7 +17,7 @@ collections:
       - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Type", name: "type", widget: "select", options: ["Real Estate", "Construction", "Golf Courses", "Other", "Events"] }
       - { label: "VideoURL", name: "videoURL", widget: "string" }
-      - { label: "Description", name: "description", widget: "markdown" }
+      - { label: "Body", name: "body", widget: "markdown" }
 
   - name: "services"  
     label: "Services" 
@@ -37,4 +37,4 @@ collections:
     fields: 
       - { label: "Title", name: "title", widget: "string" }
       - { label: "MediaURL", name: "mediaURL", widget: "string" }
-      - { label: "Subtext", name: "subtext", widget: "markdown" }
+      - { label: "Body", name: "body", widget: "markdown" }
