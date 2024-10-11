@@ -14,10 +14,10 @@ collections:
     slug: "{{slug}}" # Filename template, e.g., title.md
     fields: # The fields for each document, usually in front matter
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Description", name: "description", widget: "markdown" }
       - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Type", name: "type", widget: "select", options: ["Real Estate", "Construction", "Golf Courses", "Other", "Events"] }
       - { label: "VideoURL", name: "videoURL", widget: "string" }
+      - { label: "Description", name: "description", widget: "markdown" }
 
   - name: "services"  
     label: "Services" 
@@ -26,8 +26,8 @@ collections:
     slug: "{{slug}}" 
     fields: 
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Subtext", name: "subtext", widget: "markdown" }
       - { label: "PictureURL", name: "pictureURL", widget: "string" }
+      - { label: "Subtext", name: "subtext", widget: "markdown" }
 
   - name: "Home" 
     label: "home" 
@@ -36,5 +36,5 @@ collections:
     slug: "{{slug}}" 
     fields: 
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Subtext", name: "subtext", widget: "string" }
       - { label: "MediaURL", name: "mediaURL", widget: "string" }
+      - { label: "Subtext", name: "subtext", widget: "string" }
