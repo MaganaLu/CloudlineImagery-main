@@ -6,5 +6,3 @@ subtext: Transform your golf course's marketing with Cloudline Imagery’s
   perspectives that traditional methods can’t achieve.
 pictureURL: https://PZ-cloudline-imagery.b-cdn.net/golfImage.PNG
 ---
-
-# test 
