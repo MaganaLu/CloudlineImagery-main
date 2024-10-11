@@ -80,7 +80,7 @@ const getPortfolioEntries = () => {
                 const lines = contents.split("\n")
                 const metadataIndices = lines.reduce(getMetadataIndices, [])
                 const metadata = parseMetadata({ lines, metadataIndices })
-                //const videoURL = parseContent({lines, metadataIndices})
+                const description = parseContent({lines, metadataIndices})
                 const parsedDate = metadata.date ? formatDate(metadata.date) : new Date()
                 const publishedDate = `${parsedDate["monthName"]} ${parsedDate["day"]}, ${parsedDate["year"]}`
                 const datestring = `${parsedDate["year"]}-${parsedDate["month"]}-${parsedDate["day"]}T${parsedDate["time"]}:00`
@@ -89,7 +89,7 @@ const getPortfolioEntries = () => {
                 post = {
                     id: timestamp,
                     title: metadata.title ? metadata.title : "No title given",
-                    description: metadata.description ? metadata.description : "No description given",
+                    description: description ? description : "No description given",
                     date: publishedDate ? publishedDate : "No date given",
                     time: parsedDate["time"],
                     type: metadata.type,
