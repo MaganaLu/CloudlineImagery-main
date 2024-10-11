@@ -137,9 +137,16 @@ const getServicesEntries = () => {
                         return obj
                     }
                 }
+                const parseContent = ({ lines, metadataIndices }) => {
+                    if (metadataIndices.length > 0) {
+                        lines = lines.slice(metadataIndices[1] + 1, lines.length)
+                    }
+                    return lines.join("\n")
+                }
                 const lines = contents.split("\n")
                 const metadataIndices = lines.reduce(getMetadataIndices, [])
                 const metadata = parseMetadata({ lines, metadataIndices })
+                const description = parseContent({lines, metadataIndices})
                 const parsedDate = metadata.date ? formatDate(metadata.date) : new Date()
                 const datestring = `${parsedDate["year"]}-${parsedDate["month"]}-${parsedDate["day"]}T${parsedDate["time"]}:00`
                 const date = new Date(datestring)
@@ -148,7 +155,7 @@ const getServicesEntries = () => {
                 post = {
                     id: timestamp,
                     title: metadata.title ? metadata.title : "No title given",
-                    subtext: metadata.subtext ? metadata.subtext : "No subtext given",
+                    subtext: description ? description : "No subtext given",
                     pictureURL: metadata.pictureURL ? metadata.pictureURL : "No picture given",
                 }
                 servicesEntriesList.push(post)
