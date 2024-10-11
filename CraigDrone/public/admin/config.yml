@@ -27,7 +27,7 @@ collections:
     fields: 
       - { label: "Title", name: "title", widget: "string" }
       - { label: "PictureURL", name: "pictureURL", widget: "string" }
-      - { label: "Subtext", name: "subtext", widget: "markdown" }
+      - { label: "Body", name: "body", widget: "markdown" }
 
   - name: "Home" 
     label: "home" 
@@ -37,4 +37,4 @@ collections:
     fields: 
       - { label: "Title", name: "title", widget: "string" }
       - { label: "MediaURL", name: "mediaURL", widget: "string" }
-      - { label: "Subtext", name: "subtext", widget: "string" }
+      - { label: "Subtext", name: "subtext", widget: "markdown" }
