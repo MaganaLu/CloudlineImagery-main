@@ -27,16 +27,16 @@ const Navbar = () => {
           <div className={`nav-elements  ${showNavbar && 'active'}`}>
             <ul>
               <li>
-                <NavLink to="/">Home</NavLink>
+                <NavLink onClick={()=> setShowNavbar(false)} to="/">Home</NavLink>
               </li>
               <li>
-                <NavLink to="/Services">Services</NavLink>
+                <NavLink onClick={()=> setShowNavbar(false)} to="/Services">Services</NavLink>
               </li>
               <li>
-                <NavLink to="/Portfolio">Portfolio</NavLink>
+                <NavLink onClick={()=> setShowNavbar(false)} to="/Portfolio">Portfolio</NavLink>
               </li>
               <li>
-                <NavLink to="/Contact">Contact</NavLink>
+                <NavLink onClick={()=> setShowNavbar(false)} to="/Contact">Contact</NavLink>
               </li>
             </ul>
           </div>
