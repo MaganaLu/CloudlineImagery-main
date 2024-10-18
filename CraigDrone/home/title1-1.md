@@ -1,5 +1,6 @@
 ---
-title: Title2
+title: Real Estate
 subtext: subtext2
-mediaURL: https://PZ-cloudline-imagery.b-cdn.net/DJI_20240921121959_0002_D-2.jpg
+mediaURL: public/images/dji_20240921144245_0040_d-2.jpg
 ---
+Sample
