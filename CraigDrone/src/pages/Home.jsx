@@ -28,7 +28,7 @@ const Home = () => {
 
 
             <div className="videoContainer">
-                {/*
+               
                 <div
                     dangerouslySetInnerHTML={{
                         __html: `
@@ -44,12 +44,6 @@ const Home = () => {
                     </video>`
                     }}
                 />
-*/}
-
-                <div className='videoContainer' >
-                    <iframe id='videoPlayer' src="https://iframe.mediadelivery.net/embed/315246/0a38d39b-2c8c-404f-8f0c-1322a54ff09e?autoplay=true&loop=true&muted=true&preload=true&responsive=true" width="1920" height="1080" loading="lazy" style={{border:"0"}} allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" allowFullScreen="true">
-                    </iframe>
-                </div>
 
                 {/*}
             <div className="videoContainer">
