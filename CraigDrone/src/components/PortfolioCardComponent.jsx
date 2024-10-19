@@ -1,11 +1,8 @@
 import './PortfolioCardComponent.css'
-import imgtest from '../assets/PageHeaderImage.jpg';
 
 const PortfolioCardComponent = (props) => {
-    console.log("imageTest: ", imgtest);
-    console.log("description", props.description);
-    console.log("thumbnail: ", props.thumbnail)
 
+    console.log("props.videLink: ", props.videoLink)
 
     //let dateString = (props.date.toDate().toDateString()).toString();
     //console.log("props.thumbnail",props.thumbnail);
