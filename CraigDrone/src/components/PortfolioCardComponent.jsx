@@ -1,7 +1,6 @@
 import './PortfolioCardComponent.css'
 import React, { Component } from 'react'; 
-import img from '../images/dji_20240921144245_0040_d-2.jpg'
-import img2 from '../../public/images/dji_20240921144245_0040_d-2.jpg'
+//import img2 from '../../public/images/dji_20240921144245_0040_d-2.jpg'
 
 const PortfolioCardComponent = (props) => {
 
