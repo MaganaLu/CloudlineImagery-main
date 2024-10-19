@@ -13,7 +13,9 @@ var sorted = {};
 const Portfolio = () => {
 
   useEffect(() => {
+    sorted = {};
     parseLists();
+
     const urlHash = window.location.hash;
     if (urlHash.length) {
       const element = document.getElementById(urlHash);
