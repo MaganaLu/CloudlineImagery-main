@@ -6,7 +6,6 @@ const PortfolioCardComponent = (props) => {
     console.log("description", props.description);
     console.log("thumbnail: ", props.thumbnail)
     
-    let imageName = require(props.thumbnail);
 
     //let dateString = (props.date.toDate().toDateString()).toString();
     //console.log("props.thumbnail",props.thumbnail);
@@ -30,7 +29,7 @@ const PortfolioCardComponent = (props) => {
 
                     <p class="date">{props.date}</p>
                 </div>
-                <img id='portfolioVideoPlayer' alt="Image Not Found" src={imageName.default}></img>
+                <img id='portfolioVideoPlayer' alt="Image Not Found" src={props.thumbnail}></img>
             </div>
         </div>
     )
