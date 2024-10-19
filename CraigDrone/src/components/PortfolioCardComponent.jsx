@@ -19,12 +19,9 @@ const PortfolioCardComponent = (props) => {
                 let youtubeVideoString = (props.videoLink).replace("watch?v=", "embed/");
                 return (<iframe id='portfolioVideoPlayer' src={youtubeVideoString} allowFullScreen="true" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" ></iframe>);
             }
-        } else if (props.thumbnail != undefined) {
-            //else its an image and reurn image tag
-            return (<img id='portfolioVideoPlayer' alt="image" src={props.thumbnail}></img>);
         }
-
-
+        //else its an image and reurn image tag
+        return (<img id='portfolioVideoPlayer' alt="image" src={props.thumbnail}></img>);
     }
 
     return (
