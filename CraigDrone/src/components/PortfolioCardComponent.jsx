@@ -12,7 +12,7 @@ const PortfolioCardComponent = (props) => {
             return (<iframe id='portfolioVideoPlayer' src={videoString + "?autoplay=false&loop=true&muted=false&preload=true&responsive=true"} allowFullScreen="true" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" ></iframe>);
         }
             */}
-        return ( <img id='portfolioVideoPlayer' alt="image" src='public/images/dji_20240921144245_0040_d-2.jpg'></img>);
+        return ( <img id='portfolioVideoPlayer' alt="image" src={'/images/dji_20240921144245_0040_d-2.jpg'}></img>);
     }
 
     return (
