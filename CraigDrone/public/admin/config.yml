@@ -18,7 +18,8 @@ collections:
       - { label: "Type", name: "type", widget: "select", options: ["Real Estate", "Construction", "Golf Courses", "Other", "Events"] }
       - { label: "VideoURL", name: "videoURL", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
-
+      - { label: "Featured Image", name: "thumbnail", widget: "image"}
+      
   - name: "services"  
     label: "Services" 
     folder: "CraigDrone/services" 

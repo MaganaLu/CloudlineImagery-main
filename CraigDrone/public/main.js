@@ -94,6 +94,7 @@ const getPortfolioEntries = () => {
                     time: parsedDate["time"],
                     type: metadata.type,
                     videoURL: metadata.videoURL ? metadata.videoURL : "No content given",
+                    thumbnail: metadata.thumbnail,
                 }
                 portfolioEntriesList.push(post)
                 ilist.push(i)
