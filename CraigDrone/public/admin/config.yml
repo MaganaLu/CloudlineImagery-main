@@ -4,7 +4,7 @@ backend:
 
 # These lines should *not* be indented
 media_folder: "public/images"
-public_folder: "public/images"
+public_folder: "/images"
 
 collections:
   - name: "portfolioEntries" # Used in routes, e.g., /admin/collections/blog
@@ -17,7 +17,7 @@ collections:
       - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Type", name: "type", widget: "select", options: ["Real Estate", "Construction", "Golf Courses", "Other", "Events"] }
       - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Featured Image", name: "thumbnail", widget: "image"}
+      - { label: "Featured Image", name: "thumbnail", widget: "image", default: "public/images/dji_20240921144245_0040_d-2.jpg"}
 
   - name: "services"  
     label: "Services" 
