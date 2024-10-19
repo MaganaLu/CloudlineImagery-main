@@ -27,7 +27,7 @@ const Portfolio = () => {
     if (sorted[arrayString] != undefined) {
       return (sorted[arrayString].map(portfolioEntry =>
         <ul key={portfolioEntry.title} className="ulPortfolio">
-          <PortfolioCardComponent description={portfolioEntry.description} thumbnail={portfolioEntry.thumbnail} title={portfolioEntry.title} date={portfolioEntry.date} type={portfolioEntry.type} />
+          <PortfolioCardComponent description={portfolioEntry.description} thumbnail={portfolioEntry.thumbnail} videoLink={portfolioEntry.videoURL} title={portfolioEntry.title} date={portfolioEntry.date} type={portfolioEntry.type} />
           
         </ul>)
       )

@@ -5,19 +5,24 @@ const PortfolioCardComponent = (props) => {
     console.log("imageTest: ", imgtest);
     console.log("description", props.description);
     console.log("thumbnail: ", props.thumbnail)
-    
+
 
     //let dateString = (props.date.toDate().toDateString()).toString();
     //console.log("props.thumbnail",props.thumbnail);
     const isIframe = () => {
-        {/*}
-        if ((props.video).includes("iframe")) {
-            let videoString = (props.video).replace("play", "embed"); 
-            
-            return (<iframe id='portfolioVideoPlayer' src={videoString + "?autoplay=false&loop=true&muted=false&preload=true&responsive=true"} allowFullScreen="true" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" ></iframe>);
+        //bunnyCDN video
+        if ((props.videoLink).includes("iframe")) {
+            let bunnyVideoString = (props.videoLink).replace("play", "embed");
+
+            return (<iframe id='portfolioVideoPlayer' src={bunnyVideoString + "?autoplay=false&loop=true&muted=false&preload=true&responsive=true"} allowFullScreen="true" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" ></iframe>);
         }
-            */}
-       // return ( <img id='portfolioVideoPlayer' alt="image" src={imgtest}></img>);
+        //could be a youtibe video 
+        if((props.videoLink).includes("youtube")){
+            let youtubeVideoString = (props.videoLink).replace("watch?v=", "embed/");
+            return(<iframe id='portfolioVideoPlayer' src={youtubeVideoString} allowFullScreen="true" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" ></iframe>);
+        }
+        //else its an image and reurn image tag
+        return (<img id='portfolioVideoPlayer' alt="image" src={props.thumbnail}></img>);
     }
 
     return (
@@ -29,7 +34,8 @@ const PortfolioCardComponent = (props) => {
 
                     <p class="date">{props.date}</p>
                 </div>
-                <img id='portfolioVideoPlayer' alt="Image Not Found" src={props.thumbnail}></img>
+                {isIframe}
+                {/*<img id='portfolioVideoPlayer' alt="Image Not Found" src={props.thumbnail}></img>*/}
             </div>
         </div>
     )
