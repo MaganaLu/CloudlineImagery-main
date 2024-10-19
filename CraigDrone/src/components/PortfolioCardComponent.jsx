@@ -31,14 +31,13 @@ const PortfolioCardComponent = (props) => {
                 {isIframe()}
 
                 {/*<img id='portfolioVideoPlayer' alt="Image Not Found" src={props.thumbnail}></img>*/}
-
-                <div class="content">
+            </div>
+            <div class="content">
                     <p class="title">{props.title}</p>
                     <p class="title">{props.description}</p>
 
                     <p class="date">{props.date}</p>
                 </div>
-            </div>
         </div>
     )
 }

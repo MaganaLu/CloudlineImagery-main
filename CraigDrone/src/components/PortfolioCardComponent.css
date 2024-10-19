@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 #portfolioVideoPlayer {
@@ -12,14 +13,13 @@
   top: 0;
   left: 0;
   border:0px;
-  padding-bottom: 120px;
 }
 
 .article-card {
   width: calc(50vw - 20px);
   min-width: none;
   max-width: 800px;
-  height: 700px;
+  height: 500px;
   border-radius: 12px;
   overflow: hidden;
   position: relative;
@@ -38,7 +38,7 @@
 
 .article-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 14px 28px rgb(68, 0, 255), 0 10px 10px rgb(82, 12, 245);
+  
 }
 
 .article-card img {
@@ -56,6 +56,15 @@
   bottom: 0;
   background: linear-gradient(transparent, rgb(0, 0, 0));
   z-index: 1;
+}
+
+.content{
+  max-width: 800px;
+  padding: 10px;
+  background-color: darkgray;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  margin-top: -10px;
 }
 
 .article-card .date,
