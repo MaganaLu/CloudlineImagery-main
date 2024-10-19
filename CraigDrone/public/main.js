@@ -156,7 +156,7 @@ const getServicesEntries = () => {
                     id: timestamp,
                     title: metadata.title ? metadata.title : "No title given",
                     subtext: description ? description : "No subtext given",
-                    pictureURL: metadata.pictureURL ? metadata.pictureURL : "No picture given",
+                    thumbnail: metadata.thumbnail,
                 }
                 servicesEntriesList.push(post)
                 ilist.push(i)
@@ -219,7 +219,7 @@ const getHomeEntries = () => {
                     id: timestamp,
                     title: metadata.title ? metadata.title : "No title given",
                     subtext: description ? description : "No subtext given",
-                    mediaURL: metadata.mediaURL ? metadata.mediaURL : "No media given",
+                    thumbnail: metadata.thumbnail,
                 }
                 homeEntriesList.push(post)
                 ilist.push(i)

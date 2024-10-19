@@ -37,7 +37,7 @@ const Services = () => {
       
         {servicesEntries.map(service =>
           <ul style={{paddingInlineStart:'0px'}} onClick={() => navigateToPortfolioSection(service.title)} key={service.title}>
-            <ServicesCardComponent title={service.title} subtext={service.subtext} image={service.pictureURL} />
+            <ServicesCardComponent title={service.title} subtext={service.subtext} image={service.thumbnail} />
 
           </ul>
         )}

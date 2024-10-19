@@ -45,7 +45,7 @@ const HomeCarousel = () => {
         {homeEntries.map((imageEntry) => {
           return (
             <div className="slider" key={imageEntry.id}>
-              <img src={imageEntry.mediaURL} alt="image" />
+              <img src={imageEntry.thumbnail} alt="image not found" />
               <h1 className="cHText">{imageEntry.title}</h1>
               <p className="cPText">{imageEntry.subtext}</p>
             </div>
