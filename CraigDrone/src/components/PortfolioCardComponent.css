@@ -59,9 +59,10 @@
 }
 
 .content{
+  width: 100%;
   max-width: 800px;
   padding: 10px;
-  background-color: darkgray;
+  background-color: rgb(40, 40, 40);;
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
   margin-top: -10px;
