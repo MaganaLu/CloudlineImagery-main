@@ -28,7 +28,7 @@ const PortfolioCardComponent = (props) => {
 
                     <p class="date">{props.date}</p>
                 </div>
-                <img id='portfolioVideoPlayer' alt="image" src={imgtest}></img>
+                <img id='portfolioVideoPlayer' alt="image" src={props.thumbnail}></img>
             </div>
         </div>
     )
