@@ -59,7 +59,8 @@ const Portfolio = () => {
       ignore = true;
     };
   }, [])
-
+  
+  sorted = {}
   parseLists();
 
 
