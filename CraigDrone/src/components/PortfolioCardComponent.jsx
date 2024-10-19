@@ -3,7 +3,7 @@ import './PortfolioCardComponent.css'
 const PortfolioCardComponent = (props) => {
 
     //let dateString = (props.date.toDate().toDateString()).toString();
-
+    console.log("props.thumbnail",props.thumbnail);
     const isIframe = () => {
         {/*}
         if ((props.video).includes("iframe")) {
