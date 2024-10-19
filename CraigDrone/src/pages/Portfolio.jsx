@@ -36,6 +36,7 @@ const Portfolio = () => {
 
   useEffect(() => {
     let ignore = false;
+    sorted = {}
 
     if(!ignore){
       parseLists();
@@ -59,7 +60,7 @@ const Portfolio = () => {
     };
   }, [])
 
-
+  parseLists();
 
 
 
