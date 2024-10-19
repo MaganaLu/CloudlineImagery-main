@@ -34,7 +34,7 @@ const PortfolioCardComponent = (props) => {
 
                     <p class="date">{props.date}</p>
                 </div>
-                {isIframe}
+                {isIframe()}
                 {/*<img id='portfolioVideoPlayer' alt="Image Not Found" src={props.thumbnail}></img>*/}
             </div>
         </div>
