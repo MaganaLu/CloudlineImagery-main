@@ -13,8 +13,12 @@ var sorted = {};
 const Portfolio = () => {
 
   useEffect(() => {
-    sorted = {};
-    parseLists();
+    let ignore = false;
+
+    if(!ignore){
+      parseLists();
+    }
+    
 
     const urlHash = window.location.hash;
     if (urlHash.length) {
@@ -29,6 +33,7 @@ const Portfolio = () => {
       }
     }
     return () => {
+      ignore = true;
     };
   }, [])
 
