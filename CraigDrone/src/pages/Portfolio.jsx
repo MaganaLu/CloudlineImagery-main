@@ -35,15 +35,16 @@ const Portfolio = () => {
       return (sorted[arrayString].map(portfolioEntry =>
         <ul key={portfolioEntry.title} className="ulPortfolio">
           <PortfolioCardComponent description={portfolioEntry.description} thumbnail={portfolioEntry.thumbnail} title={portfolioEntry.title} date={portfolioEntry.date} type={portfolioEntry.type} />
+          
         </ul>)
       )
     }
   }
 
   function parseLists() {
-    console.log("in parse list");
+
     for (var i = 0, max = portfolioEntries.length; i < max; i++) {
-      console.log("pe: ",portfolioEntries[i]);
+      
       if (sorted[portfolioEntries[i].type] == undefined) {
         sorted[portfolioEntries[i].type] = [];
       }
@@ -57,17 +58,19 @@ const Portfolio = () => {
     
     <>
 
-      <PageHeader image='../assets/NatureImage.jpg' hText="Portfolio" />
+      <PageHeader hText="Portfolio" />
 
       <hr id='#Golf-Courses' className="hr-text" data-content="Golf Courses" />
       <div className="portfolioCardContainer">
         {checkUndefinedSection("Golf Courses")}
+        
       </div>
 
 
       <hr id='#Real-Estate' className="hr-text" data-content="Real Estate" />
       <div className="portfolioCardContainer">
         {checkUndefinedSection("Real Estate")}
+        {console.log("in real estate")}
       </div>
 
       <hr id='#Construction' className="hr-text" data-content="Construction" />

@@ -1,10 +1,13 @@
 import './PortfolioCardComponent.css'
-import React, { Component } from 'react'; 
+import imgtest from '../assets/PageHeaderImage.jpg';
 
 const PortfolioCardComponent = (props) => {
+    console.log("imageTest: ", imgtest);
+    console.log("description", props.description);
+    
 
     //let dateString = (props.date.toDate().toDateString()).toString();
-    console.log("props.thumbnail",props.thumbnail);
+    //console.log("props.thumbnail",props.thumbnail);
     const isIframe = () => {
         {/*}
         if ((props.video).includes("iframe")) {
@@ -13,7 +16,7 @@ const PortfolioCardComponent = (props) => {
             return (<iframe id='portfolioVideoPlayer' src={videoString + "?autoplay=false&loop=true&muted=false&preload=true&responsive=true"} allowFullScreen="true" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" ></iframe>);
         }
             */}
-        return ( <img id='portfolioVideoPlayer' alt="image" src={props.thumbnail}></img>);
+       // return ( <img id='portfolioVideoPlayer' alt="image" src={imgtest}></img>);
     }
 
     return (
@@ -25,7 +28,7 @@ const PortfolioCardComponent = (props) => {
 
                     <p class="date">{props.date}</p>
                 </div>
-                {isIframe()}
+                <img id='portfolioVideoPlayer' alt="image" src={props.thumbnail}></img>
             </div>
         </div>
     )
