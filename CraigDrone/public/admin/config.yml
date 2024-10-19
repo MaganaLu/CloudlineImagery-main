@@ -4,7 +4,7 @@ backend:
 
 # These lines should *not* be indented
 media_folder: "CraigDrone/public/images"
-public_folder: "CraigDrone/public/images"
+public_folder: "/images"
 
 collections:
   - name: "portfolioEntries" # Used in routes, e.g., /admin/collections/blog
