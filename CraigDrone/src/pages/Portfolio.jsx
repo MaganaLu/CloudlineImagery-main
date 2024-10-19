@@ -2,8 +2,6 @@ import PortfolioCardComponent from "../components/PortfolioCardComponent";
 import PageHeader from "../components/PageHeader";
 import "./Portfolio.css";
 
-import { collection, DocumentSnapshot, getDocs, query, where } from "firebase/firestore";
-import db from '../Firebase/Configuration.jsx';
 import React, { useState, useEffect } from "react";
 
 import portfolioEntries from "../portfolioEntries.json";
