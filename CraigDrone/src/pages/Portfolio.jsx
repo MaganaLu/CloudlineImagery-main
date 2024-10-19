@@ -12,6 +12,28 @@ var sorted = {};
 
 const Portfolio = () => {
 
+  function parseLists() {
+
+    for (var i = 0, max = portfolioEntries.length; i < max; i++) {
+      
+      if (sorted[portfolioEntries[i].type] == undefined) {
+        sorted[portfolioEntries[i].type] = [];
+      }
+      sorted[portfolioEntries[i].type].push(portfolioEntries[i]);
+    }
+  }
+
+  function checkUndefinedSection(arrayString) {
+    if (sorted[arrayString] != undefined) {
+      return (sorted[arrayString].map(portfolioEntry =>
+        <ul key={portfolioEntry.title} className="ulPortfolio">
+          <PortfolioCardComponent description={portfolioEntry.description} thumbnail={portfolioEntry.thumbnail} title={portfolioEntry.title} date={portfolioEntry.date} type={portfolioEntry.type} />
+          
+        </ul>)
+      )
+    }
+  }
+
   useEffect(() => {
     let ignore = false;
 
@@ -37,27 +59,9 @@ const Portfolio = () => {
     };
   }, [])
 
-  function checkUndefinedSection(arrayString) {
-    if (sorted[arrayString] != undefined) {
-      return (sorted[arrayString].map(portfolioEntry =>
-        <ul key={portfolioEntry.title} className="ulPortfolio">
-          <PortfolioCardComponent description={portfolioEntry.description} thumbnail={portfolioEntry.thumbnail} title={portfolioEntry.title} date={portfolioEntry.date} type={portfolioEntry.type} />
-          
-        </ul>)
-      )
-    }
-  }
 
-  function parseLists() {
 
-    for (var i = 0, max = portfolioEntries.length; i < max; i++) {
-      
-      if (sorted[portfolioEntries[i].type] == undefined) {
-        sorted[portfolioEntries[i].type] = [];
-      }
-      sorted[portfolioEntries[i].type].push(portfolioEntries[i]);
-    }
-  }
+
 
   
 
