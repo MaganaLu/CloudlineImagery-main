@@ -1,7 +1,7 @@
 ---
 title: Construction Progress
 subtext: construction progress
-pictureURL: https://PZ-cloudline-imagery.b-cdn.net/golfImage.PNG
+pictureURL: https://placehold.co/600x400
 ---
 At Cloudline Imagery, we specialize in high-quality construction progress photography that captures every stage of your project with precision and artistry. Our expert team leverages advanced drone technology and professional photography techniques to deliver stunning aerial imagery and detailed ground-level shots.
 
