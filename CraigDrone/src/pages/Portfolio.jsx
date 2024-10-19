@@ -35,14 +35,6 @@ const Portfolio = () => {
   }
 
   useEffect(() => {
-    let ignore = false;
-    sorted = {}
-
-    if(!ignore){
-      parseLists();
-    }
-    
-
     const urlHash = window.location.hash;
     if (urlHash.length) {
       const element = document.getElementById(urlHash);
@@ -56,10 +48,9 @@ const Portfolio = () => {
       }
     }
     return () => {
-      ignore = true;
     };
   }, [])
-  
+
   sorted = {}
   parseLists();
 
