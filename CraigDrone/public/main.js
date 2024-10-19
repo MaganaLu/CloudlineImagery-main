@@ -93,7 +93,6 @@ const getPortfolioEntries = () => {
                     date: publishedDate ? publishedDate : "No date given",
                     time: parsedDate["time"],
                     type: metadata.type,
-                    videoURL: metadata.videoURL ? metadata.videoURL : "No content given",
                     thumbnail: metadata.thumbnail,
                 }
                 portfolioEntriesList.push(post)
