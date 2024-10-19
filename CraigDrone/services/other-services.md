@@ -1,6 +1,6 @@
 ---
 title: Other Services
 subtext: Many more services
-pictureURL: public/images/dji_20241001120116_0012_d-3.jpg
+pictureURL: https://placehold.co/600x400
 ---
 Many more services
