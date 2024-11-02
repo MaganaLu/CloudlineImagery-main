@@ -2,7 +2,7 @@
 import colorWaves from '../assets/colorWaves.svg';
 import FlowChart from '../assets/FlowChart.svg';
 import video from '../assets/videos/Hole_18.webm';
-import homePageImage2 from '../assets/HomePageImage2.JPG';
+import homePageImage2 from '../assets/HomePageImage2.jpg';
 
 import HomeCarousel from '../components/HomeCarousel';
 import ContactFormWeb3 from '../components/ContactWeb3Form.jsx';
