@@ -38,7 +38,7 @@ const Home = () => {
             <img className="wavesSVG" src={colorWaves} />
             <div className="aboutSection">
                 <h2>
-                    Specializing in drone services, video production, and aerial photography across Seattle and the Pacific Northwest, we deliver high-quality visuals using the latest drone technology.
+                    Specializing in drone services, video production, and aerial photography across Seattle and the Pacific Northwest, we deliver high-quality visuals using the latest technology.
 
                 </h2>
                 <p>
