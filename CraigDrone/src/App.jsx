@@ -12,10 +12,12 @@ import Contact from './pages/Contact.jsx';
 import Portfolio from './pages/Portfolio.jsx';
 import Services from './pages/Services.jsx';
 import Footer from './components/Footer.jsx';
+import UnderConstruction from './pages/UnderConstruction.jsx'; 
 
 
 const App = () => {
     return (
+      /*
       <Router>
         <Navbar />
           <div>
@@ -30,6 +32,8 @@ const App = () => {
          <Footer/>
 
        </Router>
+       */
+      <UnderConstruction />
     );
 }
 
